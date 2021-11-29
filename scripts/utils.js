@@ -39,9 +39,9 @@ function updateVue2API() {
 
   content = content.replace(
     /\/\*\*VCA-EXPORTS\*\*\/[\s\S]+\/\*\*VCA-EXPORTS\*\*\//m,
-`/**VCA-EXPORTS**/
-export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition-api.mjs'
-/**VCA-EXPORTS**/`
+    `/**VCA-EXPORTS**/
+    export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition-api.mjs'
+    /**VCA-EXPORTS**/`
     )
 
   fs.writeFileSync(esmPath, content, 'utf-8')
